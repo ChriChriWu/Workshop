@@ -42,12 +42,67 @@ body {
   justify-content: space-between;
 }
 
+#key-visual-section header .right-title,
+#key-visual-section header .left-title {
+  animation-name: key-visual-section-header-entry;
+  animation-duration: 600ms;
+  animation-timing-function: var(--translate-timing-function);
+  animation-iteration-count: 1;
+  animation-fill-mode: backwards;
+}
+
+#key-visual-section header .right-title {
+  animation-delay: 100ms;
+}
+
+@keyframes key-visual-section-header-entry{
+  from{
+    transform: translateY(-60px);
+  }
+  to{
+    transform: translateY(0px);
+  }
+}
+
 #key-visual-section .main {
   width: 100%;
   position: absolute;
   left: 0;
   bottom: 0;
   padding: 35px 0;
+  perspective: 600px;
+}
+
+#key-visual-section .title,
+#key-visual-section .split-version{
+  animation-name: key-visual-section-main-entry;
+  animation-duration: 800ms;
+  animation-delay: 200ms;
+  animation-timing-function: var(--translate-timing-function);
+  animation-iteration-count: 1;
+  animation-fill-mode: backwards;
+}
+
+@keyframes key-visual-section-main-entry {
+  from {
+    opacity: 0;
+    transform-origin: center top;
+    transform-style: preserve-3d;
+    transform: translateY(100%) rotateX(-80deg);
+  }
+  to {
+    opacity: 1;
+    transform-origin: center top;
+    transform-style: preserve-3d;
+    transform: translateY(0%) rotateX(0deg);
+  }
+}
+
+#key-visual-section .main h2 {
+  animation-delay: 300ms;
+}
+#key-visual-section .split-version {
+  animation-delay: 400ms; 
 }
 
 #key-visual-section .title {
@@ -68,4 +123,24 @@ body {
   bottom: 40px;
   font-size: 700;
   outline: none;
+}
+
+#key-visual-section .logo {
+  animation-name: key-visual-section-logo-entry;
+  animation-duration: 600ms;
+  animation-delay: 600ms;
+  animation-timing-function: var(--translate-timing-function);
+  animation-iteration-count: 1;
+  animation-fill-mode: backwards;
+}
+
+@keyframes key-visual-section-logo-entry {
+  from {
+    opacity: 0;
+    transform: translateY(120px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
 }
